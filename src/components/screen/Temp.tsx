@@ -15,6 +15,7 @@ import {
 import styled from 'styled-components/native';
 
 import Button from '../shared/Button';
+import Setting from './Setting';
 
 const Container = styled.View`
   flex: 1;
@@ -39,6 +40,10 @@ function Page(props: Props) {
           backgroundColor: '#333333',
         }}
       />
+      {/* <Setting
+        navigation={props.navigation}
+        email='sampleEmail@doodlelab'
+      /> */}
     </Container>
   );
 }
