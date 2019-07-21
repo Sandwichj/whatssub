@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SettingOption] should render without crashing 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "display": "flex",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "space-between",
+        "paddingBottom": 0,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 0,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgb(50, 59, 67)",
+          "fontSize": 16,
+          "letterSpacing": -0.5,
+        },
+      ]
+    }
+  >
+    Sample label
+  </Text>
+</View>
+`;
