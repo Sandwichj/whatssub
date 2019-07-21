@@ -22,6 +22,15 @@ const en = {
   EMPTY_WELCOME: 'WelCome',
   EMPTY_COMMENT1: 'Press + button',
   EMPTY_COMMENT2: 'Register the service in use',
+  SETTING: 'Setting',
+  SETTING_ACCOUNT: 'Account',
+  SETTING_NOTIFICATION: 'Notification',
+  SETTING_OTHERS: 'Others',
+  SETTING_EMAIL: 'Email',
+  SETTING_NOTIFICATION_BEFORE_PAYMENT: 'Pre-billing alarm',
+  SETTING_NOTIFICATION_MARKETING_EMAIL: 'Marketing email notification',
+  SETTING_NOTIFICATION_MARKETING_PUSH: 'Marketing push notification',
+  SETTING_OTHERS_CONTACTUS: 'Contact us',
 };
 
 const ko = {
@@ -45,6 +54,15 @@ const ko = {
   EMPTY_WELCOME: '반갑습니다',
   EMPTY_COMMENT1: '+ 버튼을 눌러',
   EMPTY_COMMENT2: '사용중인 서비스를 등록해 볼까요',
+  SETTING: '설정',
+  SETTING_ACCOUNT: '계정',
+  SETTING_NOTIFICATION: '알림 설정',
+  SETTING_OTHERS: '기타',
+  SETTING_EMAIL: '이메일',
+  SETTING_NOTIFICATION_BEFORE_PAYMENT: '결제 전 알람 설정',
+  SETTING_NOTIFICATION_MARKETING_EMAIL: '마케팅 이메일 알림',
+  SETTING_NOTIFICATION_MARKETING_PUSH: '마케팅 앱 푸쉬 알림',
+  SETTING_OTHERS_CONTACTUS: '문의하기',
 };
 
 i18n.fallbacks = true;
