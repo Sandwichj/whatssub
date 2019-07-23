@@ -4,7 +4,7 @@ import * as React from 'react';
 // Note: test renderer must be required after react-native.
 import styled, { ThemeProvider } from 'styled-components/native';
 import renderer from 'react-test-renderer';
-import { render, fireEvent, findByTestId } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 
 import { createTheme, ThemeType } from '../../../theme';
 import SettingOption from '../SettingOption';

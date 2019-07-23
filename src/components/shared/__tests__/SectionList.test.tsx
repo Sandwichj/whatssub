@@ -3,22 +3,20 @@ import * as React from 'react';
 // Note: test renderer must be required after react-native.
 import styled, { ThemeProvider } from 'styled-components/native';
 import renderer from 'react-test-renderer';
-import { render } from '@testing-library/react-native';
 
 import { createTheme, ThemeType } from '../../../theme';
 import SectionList from '../SectionList';
 
-const sampeSectionTitle = 'Sample section title';
 const SampleItemText = styled.Text``;
-const component = (props?: any) => {
+const component = (props?: any, sampeSectionTitle?: string) => {
   return (
     <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
       <SectionList
         renderItem={() => (
-          <SampleItemText>Sample ITem</SampleItemText>
+          <SampleItemText>Sample Item</SampleItemText>
         )}
         sections={[{
-          title: sampeSectionTitle,
+          title: sampeSectionTitle || undefined,
           data: [],
         }]}
         {...props}
@@ -28,15 +26,26 @@ const component = (props?: any) => {
 };
 
 describe('[SectionList]', () => {
+  const sampeSectionTitle = 'Sample section title';
+
   it('should render without crashing', () => {
     const rendered = renderer.create(component());
     expect(rendered).toMatchSnapshot();
     expect(rendered).toBeTruthy();
   });
 
-  it('should render section title', () => {
-    const { findByText } = render(component());
+  it(`should render [SectionEmptyHeader]"`, () => {
+    const rendered = renderer.create(component());
+    const sectionHeader = rendered.root.findByProps({ testID: 'sectionEmptyHeader' });
 
-    expect(findByText(sampeSectionTitle)).toBeTruthy();
+    expect(sectionHeader).toBeTruthy();
+  });
+
+  it(`should render [SectionHeader] with title "${sampeSectionTitle}"`, () => {
+    const rendered = renderer.create(component({}, sampeSectionTitle));
+    const sectionHeader = rendered.root.findByProps({ testID: 'sectionHeader' });
+    const sectionHeaderText = sectionHeader.findByProps({ children: sampeSectionTitle });
+
+    expect(sectionHeaderText).toBeTruthy();
   });
 });
