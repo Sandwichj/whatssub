@@ -41,13 +41,15 @@ function Shared({
     </>
   );
 
-  return (
+  return onPress ? (
+    <TouchableOpacity onPress={onPress} testID='touchable'>
+      <Container testID={testID}>
+        {settingOption}
+      </Container>
+    </TouchableOpacity>
+  ) : (
     <Container testID={testID}>
-      {onPress ? (
-        <TouchableOpacity onPress={onPress} testID='touchable'>
-          {settingOption}
-        </TouchableOpacity>
-      ) : settingOption}
+      {settingOption}
     </Container>
   );
 }
