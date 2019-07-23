@@ -24,7 +24,7 @@ const Label = styled.Text`
 type Props = {
   label: string;
   children?: any;
-  onPress?: () => {};
+  onPress?: () => void;
   testID?: string;
 }
 
