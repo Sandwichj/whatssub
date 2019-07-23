@@ -43,6 +43,10 @@ function Page(props: Props) {
       {/* <Setting
         navigation={props.navigation}
         email='sampleEmail@doodlelab'
+        onSwitchToggleNotiBeforePaymentPress={() => {}}
+        onSwitchToggleNotiMarkettingEmailPress={() => {}}
+        onSwitchToggleNotiMarkettingPushPress={() => {}}
+        onContactUsPress={() => {}}
       /> */}
     </Container>
   );
