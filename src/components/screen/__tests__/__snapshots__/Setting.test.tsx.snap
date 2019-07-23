@@ -104,7 +104,7 @@ exports[`[Setting] should render without crashing 1`] = `
           "data": Array [
             Object {
               "label": "Contact us",
-              "onPress": [Function],
+              "onPress": undefined,
             },
           ],
           "title": "Others",
@@ -168,7 +168,7 @@ exports[`[Setting] should render without crashing 1`] = `
           "data": Array [
             Object {
               "label": "Contact us",
-              "onPress": [Function],
+              "onPress": undefined,
             },
           ],
           "title": "Others",
@@ -225,6 +225,7 @@ exports[`[Setting] should render without crashing 1`] = `
               },
             ]
           }
+          testID="sectionHeader"
         >
           <Text
             style={
@@ -262,7 +263,6 @@ exports[`[Setting] should render without crashing 1`] = `
               },
             ]
           }
-          testID="sectionItem-Email"
         >
           <Text
             style={
@@ -327,6 +327,7 @@ exports[`[Setting] should render without crashing 1`] = `
               },
             ]
           }
+          testID="sectionHeader"
         >
           <Text
             style={
@@ -365,7 +366,6 @@ exports[`[Setting] should render without crashing 1`] = `
                 },
               ]
             }
-            testID="sectionItem-Pre-billing alarm"
           >
             <Text
               style={
@@ -508,7 +508,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 "data": Array [
                   Object {
                     "label": "Contact us",
-                    "onPress": [Function],
+                    "onPress": undefined,
                   },
                 ],
                 "title": "Others",
@@ -539,7 +539,6 @@ exports[`[Setting] should render without crashing 1`] = `
                 },
               ]
             }
-            testID="sectionItem-Marketing email notification"
           >
             <Text
               style={
@@ -682,7 +681,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 "data": Array [
                   Object {
                     "label": "Contact us",
-                    "onPress": [Function],
+                    "onPress": undefined,
                   },
                 ],
                 "title": "Others",
@@ -712,7 +711,6 @@ exports[`[Setting] should render without crashing 1`] = `
               },
             ]
           }
-          testID="sectionItem-Marketing push notification"
         >
           <Text
             style={
@@ -819,6 +817,7 @@ exports[`[Setting] should render without crashing 1`] = `
               },
             ]
           }
+          testID="sectionHeader"
         >
           <Text
             style={
@@ -856,38 +855,20 @@ exports[`[Setting] should render without crashing 1`] = `
               },
             ]
           }
-          testID="sectionItem-Contact us"
         >
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <Text
             style={
-              Object {
-                "opacity": 1,
-              }
+              Array [
+                Object {
+                  "color": "rgb(50, 59, 67)",
+                  "fontSize": 16,
+                  "letterSpacing": -0.5,
+                },
+              ]
             }
-            testID="touchable"
           >
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "rgb(50, 59, 67)",
-                    "fontSize": 16,
-                    "letterSpacing": -0.5,
-                  },
-                ]
-              }
-            >
-              Contact us
-            </Text>
-          </View>
+            Contact us
+          </Text>
         </View>
       </View>
       <View

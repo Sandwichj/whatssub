@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 import SwitchToggle from 'react-native-switch-toggle';
-import { GestureResponderEvent } from 'react-native';
 
 interface IProps {
-  onPress: (event: GestureResponderEvent, switchOn: boolean) => {},
+  onPress: (switchOn: boolean) => {},
   [prop: string]: any,
 };
 
 function StyledSwitchToggle({ onPress, ...props }: IProps) {
   const [switchOn, setSwitchOn] = useState<boolean>(true);
 
-  const handlePress = (event: GestureResponderEvent) => {
+  const handlePress = () => {
     const currentSwitchOn = !switchOn;
 
     setSwitchOn(currentSwitchOn);
 
-    if (onPress) {
-      onPress(event, currentSwitchOn);
-    }
+    onPress(currentSwitchOn);
 
     return true;
   };

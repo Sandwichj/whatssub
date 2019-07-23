@@ -1,15 +1,8 @@
-import { View } from 'react-native';
 import * as React from 'react';
 
 // Note: test renderer must be required after react-native.
-import styled, { ThemeProvider } from 'styled-components/native';
+import { ThemeProvider } from 'styled-components/native';
 import renderer from 'react-test-renderer';
-import {
-  render,
-  findByText,
-  findByTestId,
-  fireEvent,
-} from '@testing-library/react-native';
 
 import { getString } from '../../../../STRINGS';
 import { createTheme, ThemeType } from '../../../theme';
@@ -32,7 +25,6 @@ const sampleEmail = 'sampleEmail@doodlelab';
 const switchToggleNotiBeforePaymentTestID = 'switchToggleNotiBeforePayment';
 const switchToggleOnNotiMarkettingEmailTestID = 'switchToggleOnNotiMarkettingEmail';
 const switchToggleOnNotiMarkettingPushTestID = 'switchToggleOnNotiMarkettingPush';
-const getSectionListItemTestID = (label) => `sectionItem-${label}`;
 const component = (props?: any) => {
   return (
     <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
@@ -41,6 +33,9 @@ const component = (props?: any) => {
           navigate: jest.fn(),
         }}
         email={sampleEmail}
+        screenProps={{
+          theme: createTheme(ThemeType.LIGHT),
+        }}
         {...props}
       />
     </ThemeProvider>
@@ -55,94 +50,84 @@ describe('[Setting]', () => {
   });
 
   it(`should render [Text] with value "${HEADERTEXT}"`, () => {
-    const { findByText } = render(component());
-
-    expect(findByText(HEADERTEXT)).toBeTruthy();
+    const rendered = renderer.create(component());
+    const text = rendered.root.findByProps({ children: HEADERTEXT });
+    expect(text).toBeTruthy();
   });
 
   it(`should render section header with value "${SECTION_HEADER.ACCOUNT}"`, () => {
-    const { findByText } = render(component());
-
-    expect(findByText(SECTION_HEADER.ACCOUNT)).toBeTruthy();
+    const rendered = renderer.create(component());
+    const sectionHeader = rendered.root.findByProps({ children: SECTION_HEADER.ACCOUNT });
+    expect(sectionHeader).toBeTruthy();
   });
 
   it(`should render section header with value "${SECTION_HEADER.NOTIFICATION}"`, () => {
-    const { findByText } = render(component());
-
-    expect(findByText(SECTION_HEADER.NOTIFICATION)).toBeTruthy();
+    const rendered = renderer.create(component());
+    const sectionHeader = rendered.root.findByProps({ children: SECTION_HEADER.NOTIFICATION });
+    expect(sectionHeader).toBeTruthy();
   });
 
   it(`should render section header with value "${SECTION_HEADER.OTHERS}"`, () => {
-    const { findByText } = render(component());
-
-    expect(findByText(SECTION_HEADER.OTHERS)).toBeTruthy();
+    const rendered = renderer.create(component());
+    const sectionHeader = rendered.root.findByProps({ children: SECTION_HEADER.OTHERS });
+    expect(sectionHeader).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.EMAIL}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.EMAIL));
-
-    expect(findByText(sectionItem, SECTION_LABEL.EMAIL)).toBeTruthy();
+  it(`should render sectionItem with label "${SECTION_LABEL.EMAIL}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.EMAIL });
+    expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.EMAIL}" with email`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.EMAIL));
-
-    expect(findByText(sectionItem, SECTION_LABEL.EMAIL)).toBeTruthy();
-    expect(findByText(sectionItem, sampleEmail)).toBeTruthy();
+  it(`should render sectionItem "${SECTION_LABEL.EMAIL}" with email`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.EMAIL });
+    expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT));
-
-    expect(findByText(sectionItem, SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT)).toBeTruthy();
+  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT });
+    expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}" with [SwitchToggle] "${switchToggleNotiBeforePaymentTestID}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT));
+  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}" with [SwitchToggle] "${switchToggleNotiBeforePaymentTestID}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT });
 
-    expect(findByText(sectionItem, SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT)).toBeTruthy();
-    expect(findByTestId(sectionItem, switchToggleNotiBeforePaymentTestID)).toBeTruthy();
+    expect(sectionItem.findByProps({ testID: switchToggleNotiBeforePaymentTestID })).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL));
-
-    expect(findByText(sectionItem, SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL)).toBeTruthy();
+  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL });
+    expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}" with [SwitchToggle] "${switchToggleOnNotiMarkettingEmailTestID}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL));
+  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}" with [SwitchToggle] "${switchToggleOnNotiMarkettingEmailTestID}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL });
 
-    expect(findByText(sectionItem, SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL)).toBeTruthy();
-    expect(findByTestId(sectionItem, switchToggleOnNotiMarkettingEmailTestID)).toBeTruthy();
+    expect(sectionItem.findByProps({ testID: switchToggleOnNotiMarkettingEmailTestID })).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_MARKETING_PUSH));
-
-    expect(findByText(sectionItem, SECTION_LABEL.NOTIFICATION_MARKETING_PUSH)).toBeTruthy();
+  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_PUSH });
+    expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}" with [SwitchToggle] "${switchToggleOnNotiMarkettingPushTestID}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_MARKETING_PUSH));
+  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}" with [SwitchToggle] "${switchToggleOnNotiMarkettingPushTestID}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_PUSH });
 
-    expect(findByText(sectionItem, SECTION_LABEL.NOTIFICATION_MARKETING_PUSH)).toBeTruthy();
-    expect(findByTestId(sectionItem, switchToggleOnNotiMarkettingPushTestID)).toBeTruthy();
+    expect(sectionItem.findByProps({ testID: switchToggleOnNotiMarkettingPushTestID })).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.OTHERS_CONTACTUS}"`, async () => {
-    const { container } = render(component());
-    const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.OTHERS_CONTACTUS));
-
-    expect(findByText(sectionItem, SECTION_LABEL.OTHERS_CONTACTUS)).toBeTruthy();
+  it(`should render sectionItem with label "${SECTION_LABEL.OTHERS_CONTACTUS}"`, () => {
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.OTHERS_CONTACTUS });
+    expect(sectionItem).toBeTruthy();
   });
 
   describe('[Setting] Interaction', () => {
@@ -150,41 +135,34 @@ describe('[Setting]', () => {
     const handleSwitchToggleNotiMarkettingEmailPress = jest.fn();
     const handleSwitchToggleNotiMarkettingPushPress = jest.fn();
     const handleContactUsPress = jest.fn();
-    const { container } = render(component({
+    const rendered = renderer.create(component({
       onSwitchToggleNotiBeforePaymentPress: handleSwitchToggleNotiBeforePaymentPress,
       onSwitchToggleNotiMarkettingEmailPress: handleSwitchToggleNotiMarkettingEmailPress,
       onSwitchToggleNotiMarkettingPushPress: handleSwitchToggleNotiMarkettingPushPress,
       onContactUsPress: handleContactUsPress,
     }));
 
-    // it('should simulate onSwitchToggleNotiBeforePaymentPress', async () => {
-    //   const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT));
-    //   const switchToggle = await findByTestId(sectionItem, switchToggleNotiBeforePaymentTestID);
+    it('should simulate onSwitchToggleNotiBeforePaymentPress', () => {
+      const switchToggle = rendered.root.findByProps({ testID: switchToggleNotiBeforePaymentTestID });
+      switchToggle.props.onPress();
+      expect(handleSwitchToggleNotiBeforePaymentPress).toHaveBeenCalled();
+    });
 
-    //   fireEvent.press(switchToggle);
-    //   expect(handleSwitchToggleNotiBeforePaymentPress).toHaveBeenCalled();
-    // });
+    it('should simulate onSwitchToggleNotiMarkettingEmailPress', () => {
+      const switchToggle = rendered.root.findByProps({ testID: switchToggleOnNotiMarkettingEmailTestID });
+      switchToggle.props.onPress();
+      expect(handleSwitchToggleNotiMarkettingEmailPress).toHaveBeenCalled();
+    });
 
-    // it('should simulate onSwitchToggleNotiMarkettingEmailPress', async () => {
-    //   const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL));
-    //   const switchToggle = await findByTestId(sectionItem, switchToggleOnNotiMarkettingEmailTestID);
+    it('should simulate onSwitchToggleNotiMarkettingPushPress', () => {
+      const switchToggle = rendered.root.findByProps({ testID: switchToggleOnNotiMarkettingPushTestID });
+      switchToggle.props.onPress();
+      expect(handleSwitchToggleNotiMarkettingPushPress).toHaveBeenCalled();
+    });
 
-    //   fireEvent.press(switchToggle);
-    //   expect(handleSwitchToggleNotiBeforePaymentPress).toHaveBeenCalled();
-    // });
-
-    // it('should simulate onSwitchToggleNotiMarkettingPushPress', async () => {
-    //   const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.NOTIFICATION_MARKETING_PUSH));
-    //   const switchToggle = await findByTestId(sectionItem, switchToggleOnNotiMarkettingPushTestID);
-
-    //   fireEvent.press(switchToggle);
-    //   expect(handleSwitchToggleNotiBeforePaymentPress).toHaveBeenCalled();
-    // });
-
-    it('should simulate onContactUsPress', async () => {
-      const sectionItem = await findByTestId(container, getSectionListItemTestID(SECTION_LABEL.OTHERS_CONTACTUS));
-
-      fireEvent.press(await findByTestId(sectionItem, 'touchable'));
+    it('should simulate onContactUsPress', () => {
+      const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.OTHERS_CONTACTUS });
+      sectionItem.props.onPress();
       expect(handleContactUsPress).toHaveBeenCalled();
     });
   });

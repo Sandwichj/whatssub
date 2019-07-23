@@ -58,11 +58,11 @@ function SectionList({
         <>
           <SectionSeparator />
           {title ? (
-            <SectionHeader>
+            <SectionHeader testID='sectionHeader'>
               <SectionHeaderText>{title}</SectionHeaderText>
             </SectionHeader>
           ) : (
-            <SectionEmptyHeader />
+            <SectionEmptyHeader testID='sectionEmptyHeader' />
           )}
         </>
       )}

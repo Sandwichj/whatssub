@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Constants } from 'expo';
+import Constants from 'expo-constants';
 import { NavigationScreenProp, NavigationStateRoute } from 'react-navigation';
 import styled from 'styled-components/native';
 
 import { getString } from '../../../STRINGS';
 import SectionList from '../shared/SectionList';
 import SettingOption from '../shared/SettingOption';
-import SwitchToggle from '../ui/SwitchToggle';
-import { GestureResponderEvent } from 'react-native';
+import SwitchToggle from '../shared/SwitchToggle';
 
 const Container = styled.View`
   display: flex;
@@ -39,27 +38,23 @@ const AccountEmail = styled.Text`
 
 interface IProps {
   navigation?: NavigationScreenProp<any, any>;
+  screenProps?: any,
   email: string,
-  onSwitchToggleNotiBeforePaymentPress?: (event: GestureResponderEvent, switchOn: boolean) => {};
-  onSwitchToggleNotiMarkettingEmailPress?: (event: GestureResponderEvent, switchOn: boolean) => {};
-  onSwitchToggleNotiMarkettingPushPress?: (event: GestureResponderEvent, switchOn: boolean) => {};
+  onSwitchToggleNotiBeforePaymentPress?: (switchOn: boolean) => {};
+  onSwitchToggleNotiMarkettingEmailPress?: (switchOn: boolean) => {};
+  onSwitchToggleNotiMarkettingPushPress?: (switchOn: boolean) => {};
   onContactUsPress?: () => {};
 }
 
 function Page({
   navigation,
+  screenProps,
   email,
   onSwitchToggleNotiBeforePaymentPress,
   onSwitchToggleNotiMarkettingEmailPress,
   onSwitchToggleNotiMarkettingPushPress,
   onContactUsPress,
 }: IProps) {
-  const handleContactUsPress = () => {
-    if (onContactUsPress) {
-      onContactUsPress();
-    }
-  };
-
   return (
     <Container>
       <Header>
@@ -74,7 +69,6 @@ function Page({
               key={index}
               label={label}
               onPress={onPress}
-              testID={`sectionItem-${label}`}
             >
               {option}
             </SettingOption>
@@ -119,7 +113,7 @@ function Page({
           title: `${getString('SETTING_OTHERS')}`,
           data: [{
             label: getString('SETTING_OTHERS_CONTACTUS'),
-            onPress: handleContactUsPress,
+            onPress: onContactUsPress,
           }],
         }]}
       />

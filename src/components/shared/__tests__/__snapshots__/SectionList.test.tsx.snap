@@ -27,7 +27,7 @@ exports[`[SectionList] should render without crashing 1`] = `
     Array [
       Object {
         "data": Array [],
-        "title": "Sample section title",
+        "title": undefined,
       },
     ]
   }
@@ -52,7 +52,7 @@ exports[`[SectionList] should render without crashing 1`] = `
     Array [
       Object {
         "data": Array [],
-        "title": "Sample section title",
+        "title": undefined,
       },
     ]
   }
@@ -95,7 +95,7 @@ exports[`[SectionList] should render without crashing 1`] = `
             Object {
               "backgroundColor": "rgb(249, 250, 251)",
               "display": "flex",
-              "height": 36,
+              "height": 12,
               "justifyContent": "center",
               "paddingBottom": 0,
               "paddingLeft": 16,
@@ -104,21 +104,8 @@ exports[`[SectionList] should render without crashing 1`] = `
             },
           ]
         }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "rgb(153, 162, 170)",
-                "fontSize": 12,
-                "letterSpacing": -0.5,
-              },
-            ]
-          }
-        >
-          Sample section title
-        </Text>
-      </View>
+        testID="sectionEmptyHeader"
+      />
     </View>
     <View
       onLayout={[Function]}
