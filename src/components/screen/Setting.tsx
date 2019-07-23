@@ -40,10 +40,10 @@ interface IProps {
   navigation?: NavigationScreenProp<any, any>;
   screenProps?: any,
   email: string,
-  onSwitchToggleNotiBeforePaymentPress?: (switchOn: boolean) => {};
-  onSwitchToggleNotiMarkettingEmailPress?: (switchOn: boolean) => {};
-  onSwitchToggleNotiMarkettingPushPress?: (switchOn: boolean) => {};
-  onContactUsPress?: () => {};
+  onSwitchToggleNotiBeforePaymentPress: (switchOn: boolean) => void;
+  onSwitchToggleNotiMarkettingEmailPress: (switchOn: boolean) => void;
+  onSwitchToggleNotiMarkettingPushPress: (switchOn: boolean) => void;
+  onContactUsPress: () => void;
 }
 
 function Page({
