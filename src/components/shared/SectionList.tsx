@@ -51,7 +51,7 @@ interface Props {
 function SectionList({
   sections,
   ...props
-}: IProps) {
+}: Props) {
   return (
     <StyledSelectionList
       renderSectionHeader={({ section: { title } }) => (

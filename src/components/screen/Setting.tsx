@@ -54,7 +54,7 @@ function Page({
   onSwitchToggleNotiMarkettingEmailPress,
   onSwitchToggleNotiMarkettingPushPress,
   onContactUsPress,
-}: IProps) {
+}: Props) {
   return (
     <Container>
       <Header>

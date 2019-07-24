@@ -6,7 +6,7 @@ interface Props {
   [prop: string]: any,
 };
 
-function StyledSwitchToggle({ onPress, ...props }: IProps) {
+function StyledSwitchToggle({ onPress, ...props }: Props) {
   const [switchOn, setSwitchOn] = useState<boolean>(true);
 
   const handlePress = () => {
