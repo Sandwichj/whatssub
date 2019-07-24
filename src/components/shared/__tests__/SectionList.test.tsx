@@ -36,15 +36,21 @@ describe('[SectionList]', () => {
 
   it(`should render [SectionEmptyHeader]"`, () => {
     const rendered = renderer.create(component());
-    const sectionHeader = rendered.root.findByProps({ testID: 'sectionEmptyHeader' });
+    const sectionHeader = rendered.root.findByProps({
+      testID: 'sectionEmptyHeader',
+    });
 
     expect(sectionHeader).toBeTruthy();
   });
 
   it(`should render [SectionHeader] with title "${sampeSectionTitle}"`, () => {
     const rendered = renderer.create(component({}, sampeSectionTitle));
-    const sectionHeader = rendered.root.findByProps({ testID: 'sectionHeader' });
-    const sectionHeaderText = sectionHeader.findByProps({ children: sampeSectionTitle });
+    const sectionHeader = rendered.root.findByProps({
+      testID: 'sectionHeader',
+    });
+    const sectionHeaderText = sectionHeader.findByProps({
+      children: sampeSectionTitle,
+    });
 
     expect(sectionHeaderText).toBeTruthy();
   });

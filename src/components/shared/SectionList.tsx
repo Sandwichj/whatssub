@@ -43,9 +43,9 @@ const SectionHeaderText = styled.Text`
   letter-spacing: -0.5;
 `;
 
-interface IProps {
+interface Props {
   sections: readonly SectionListData<any>[];
-  [prop: string]: any,
+  [prop: string]: any;
 }
 
 function SectionList({
