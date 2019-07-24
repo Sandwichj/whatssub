@@ -21,7 +21,7 @@ const Label = styled.Text`
   letter-spacing: -0.5;
 `;
 
-type Props = {
+interface Props {
   label: string;
   children?: any;
   onPress?: () => void;

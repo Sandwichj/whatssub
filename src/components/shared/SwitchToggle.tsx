@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SwitchToggle from 'react-native-switch-toggle';
 
-interface IProps {
+interface Props {
   onPress: (switchOn: boolean) => void,
   [prop: string]: any,
 };

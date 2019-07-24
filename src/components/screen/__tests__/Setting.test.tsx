@@ -17,14 +17,17 @@ const SECTION_HEADER = {
 const SECTION_LABEL = {
   EMAIL: getString('SETTING_EMAIL'),
   NOTIFICATION_BEFORE_PAYMENT: getString('SETTING_NOTIFICATION_BEFORE_PAYMENT'),
-  NOTIFICATION_MARKETING_EMAIL: getString('SETTING_NOTIFICATION_MARKETING_EMAIL'),
+  NOTIFICATION_MARKETING_EMAIL:
+    getString('SETTING_NOTIFICATION_MARKETING_EMAIL'),
   NOTIFICATION_MARKETING_PUSH: getString('SETTING_NOTIFICATION_MARKETING_PUSH'),
   OTHERS_CONTACTUS: getString('SETTING_OTHERS_CONTACTUS'),
 };
 const sampleEmail = 'sampleEmail@doodlelab';
 const switchToggleNotiBeforePaymentTestID = 'switchToggleNotiBeforePayment';
-const switchToggleOnNotiMarkettingEmailTestID = 'switchToggleOnNotiMarkettingEmail';
-const switchToggleOnNotiMarkettingPushTestID = 'switchToggleOnNotiMarkettingPush';
+const switchToggleOnNotiMarkettingEmailTestID =
+ 'switchToggleOnNotiMarkettingEmail';
+const switchToggleOnNotiMarkettingPushTestID =
+ 'switchToggleOnNotiMarkettingPush';
 const component = (props?: any) => {
   return (
     <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
@@ -55,78 +58,119 @@ describe('[Setting]', () => {
     expect(text).toBeTruthy();
   });
 
-  it(`should render section header with value "${SECTION_HEADER.ACCOUNT}"`, () => {
+  it(`should render section header
+   with value "${SECTION_HEADER.ACCOUNT}"`, () => {
     const rendered = renderer.create(component());
-    const sectionHeader = rendered.root.findByProps({ children: SECTION_HEADER.ACCOUNT });
+    const sectionHeader = rendered.root.findByProps({
+      children: SECTION_HEADER.ACCOUNT,
+    });
     expect(sectionHeader).toBeTruthy();
   });
 
-  it(`should render section header with value "${SECTION_HEADER.NOTIFICATION}"`, () => {
+  it(`should render section header
+   with value "${SECTION_HEADER.NOTIFICATION}"`, () => {
     const rendered = renderer.create(component());
-    const sectionHeader = rendered.root.findByProps({ children: SECTION_HEADER.NOTIFICATION });
+    const sectionHeader = rendered.root.findByProps({
+      children: SECTION_HEADER.NOTIFICATION,
+    });
     expect(sectionHeader).toBeTruthy();
   });
 
-  it(`should render section header with value "${SECTION_HEADER.OTHERS}"`, () => {
+  it(`should render section header
+   with value "${SECTION_HEADER.OTHERS}"`, () => {
     const rendered = renderer.create(component());
-    const sectionHeader = rendered.root.findByProps({ children: SECTION_HEADER.OTHERS });
+    const sectionHeader = rendered.root.findByProps({
+      children: SECTION_HEADER.OTHERS,
+    });
     expect(sectionHeader).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.EMAIL}"`, () => {
+  it(`should render sectionItem
+   with label "${SECTION_LABEL.EMAIL}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.EMAIL });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.EMAIL,
+    });
     expect(sectionItem).toBeTruthy();
   });
 
   it(`should render sectionItem "${SECTION_LABEL.EMAIL}" with email`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.EMAIL });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.EMAIL,
+    });
     expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}"`, () => {
+  it(`should render sectionItem
+  with label "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT,
+    });
     expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}" with [SwitchToggle] "${switchToggleNotiBeforePaymentTestID}"`, () => {
+  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT}"
+   with [SwitchToggle] "${switchToggleNotiBeforePaymentTestID}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.NOTIFICATION_BEFORE_PAYMENT,
+    });
 
-    expect(sectionItem.findByProps({ testID: switchToggleNotiBeforePaymentTestID })).toBeTruthy();
+    expect(sectionItem.findByProps({
+      testID: switchToggleNotiBeforePaymentTestID,
+    })).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}"`, () => {
+  it(`should render sectionItem
+   with label "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL,
+    });
     expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}" with [SwitchToggle] "${switchToggleOnNotiMarkettingEmailTestID}"`, () => {
+  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL}"
+   with [SwitchToggle] "${switchToggleOnNotiMarkettingEmailTestID}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.NOTIFICATION_MARKETING_EMAIL,
+    });
 
-    expect(sectionItem.findByProps({ testID: switchToggleOnNotiMarkettingEmailTestID })).toBeTruthy();
+    expect(sectionItem.findByProps({
+      testID: switchToggleOnNotiMarkettingEmailTestID,
+    })).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}"`, () => {
+  it(`should render sectionItem
+   with label "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_PUSH });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.NOTIFICATION_MARKETING_PUSH,
+    });
     expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}" with [SwitchToggle] "${switchToggleOnNotiMarkettingPushTestID}"`, () => {
+  it(`should render sectionItem "${SECTION_LABEL.NOTIFICATION_MARKETING_PUSH}"
+   with [SwitchToggle] "${switchToggleOnNotiMarkettingPushTestID}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.NOTIFICATION_MARKETING_PUSH });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.NOTIFICATION_MARKETING_PUSH,
+    });
 
-    expect(sectionItem.findByProps({ testID: switchToggleOnNotiMarkettingPushTestID })).toBeTruthy();
+    expect(sectionItem.findByProps({
+      testID: switchToggleOnNotiMarkettingPushTestID,
+    })).toBeTruthy();
   });
 
-  it(`should render sectionItem with label "${SECTION_LABEL.OTHERS_CONTACTUS}"`, () => {
+  it(`should render sectionItem
+   with label "${SECTION_LABEL.OTHERS_CONTACTUS}"`, () => {
     const rendered = renderer.create(component());
-    const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.OTHERS_CONTACTUS });
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.OTHERS_CONTACTUS,
+    });
     expect(sectionItem).toBeTruthy();
   });
 
@@ -136,32 +180,43 @@ describe('[Setting]', () => {
     const handleSwitchToggleNotiMarkettingPushPress = jest.fn();
     const handleContactUsPress = jest.fn();
     const rendered = renderer.create(component({
-      onSwitchToggleNotiBeforePaymentPress: handleSwitchToggleNotiBeforePaymentPress,
-      onSwitchToggleNotiMarkettingEmailPress: handleSwitchToggleNotiMarkettingEmailPress,
-      onSwitchToggleNotiMarkettingPushPress: handleSwitchToggleNotiMarkettingPushPress,
+      onSwitchToggleNotiBeforePaymentPress:
+        handleSwitchToggleNotiBeforePaymentPress,
+      onSwitchToggleNotiMarkettingEmailPress:
+        handleSwitchToggleNotiMarkettingEmailPress,
+      onSwitchToggleNotiMarkettingPushPress:
+        handleSwitchToggleNotiMarkettingPushPress,
       onContactUsPress: handleContactUsPress,
     }));
 
     it('should simulate onSwitchToggleNotiBeforePaymentPress', () => {
-      const switchToggle = rendered.root.findByProps({ testID: switchToggleNotiBeforePaymentTestID });
+      const switchToggle = rendered.root.findByProps({
+        testID: switchToggleNotiBeforePaymentTestID,
+      });
       switchToggle.props.onPress();
       expect(handleSwitchToggleNotiBeforePaymentPress).toHaveBeenCalled();
     });
 
     it('should simulate onSwitchToggleNotiMarkettingEmailPress', () => {
-      const switchToggle = rendered.root.findByProps({ testID: switchToggleOnNotiMarkettingEmailTestID });
+      const switchToggle = rendered.root.findByProps({
+        testID: switchToggleOnNotiMarkettingEmailTestID,
+      });
       switchToggle.props.onPress();
       expect(handleSwitchToggleNotiMarkettingEmailPress).toHaveBeenCalled();
     });
 
     it('should simulate onSwitchToggleNotiMarkettingPushPress', () => {
-      const switchToggle = rendered.root.findByProps({ testID: switchToggleOnNotiMarkettingPushTestID });
+      const switchToggle = rendered.root.findByProps({
+        testID: switchToggleOnNotiMarkettingPushTestID,
+      });
       switchToggle.props.onPress();
       expect(handleSwitchToggleNotiMarkettingPushPress).toHaveBeenCalled();
     });
 
     it('should simulate onContactUsPress', () => {
-      const sectionItem = rendered.root.findByProps({ label: SECTION_LABEL.OTHERS_CONTACTUS });
+      const sectionItem = rendered.root.findByProps({
+        label: SECTION_LABEL.OTHERS_CONTACTUS,
+      });
       sectionItem.props.onPress();
       expect(handleContactUsPress).toHaveBeenCalled();
     });

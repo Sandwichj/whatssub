@@ -36,7 +36,7 @@ const AccountEmail = styled.Text`
   letter-spacing: -0.5;
 `;
 
-interface IProps {
+interface Props {
   navigation?: NavigationScreenProp<any, any>;
   screenProps?: any,
   email: string,
