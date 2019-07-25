@@ -1,8 +1,8 @@
-import React from 'react';
 import {
   SectionList as ReactNativeSectionList,
   SectionListData,
 } from 'react-native';
+import React from 'react';
 import styled from 'styled-components/native';
 
 const StyledSelectionList = styled(ReactNativeSectionList)`

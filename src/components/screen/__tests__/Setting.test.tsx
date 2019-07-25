@@ -1,12 +1,10 @@
 import * as React from 'react';
 
 // Note: test renderer must be required after react-native.
-import { ThemeProvider } from 'styled-components/native';
-import renderer from 'react-test-renderer';
-
-import { getString } from '../../../../STRINGS';
-import { createTheme, ThemeType } from '../../../theme';
 import Setting from '../Setting';
+import { ThemeProvider } from 'styled-components/native';
+import { getString } from '../../../../STRINGS';
+import renderer from 'react-test-renderer';
 
 const HEADERTEXT = getString('SETTING');
 const SECTION_HEADER = {
@@ -30,18 +28,13 @@ const switchToggleOnNotiMarkettingPushTestID =
  'switchToggleOnNotiMarkettingPush';
 const component = (props?: any) => {
   return (
-    <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
-      <Setting
-        navigation={{
-          navigate: jest.fn(),
-        }}
-        email={sampleEmail}
-        screenProps={{
-          theme: createTheme(ThemeType.LIGHT),
-        }}
-        {...props}
-      />
-    </ThemeProvider>
+    <Setting
+      navigation={{
+        navigate: jest.fn(),
+      }}
+      email={sampleEmail}
+      {...props}
+    />
   );
 };
 

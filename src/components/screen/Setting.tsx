@@ -1,12 +1,11 @@
+import { NavigationScreenProp, NavigationStateRoute } from 'react-navigation';
 import React, { useState } from 'react';
 import Constants from 'expo-constants';
-import { NavigationScreenProp, NavigationStateRoute } from 'react-navigation';
-import styled from 'styled-components/native';
-
-import { getString } from '../../../STRINGS';
 import SectionList from '../shared/SectionList';
 import SettingOption from '../shared/SettingOption';
 import SwitchToggle from '../shared/SwitchToggle';
+import { getString } from '../../../STRINGS';
+import styled from 'styled-components/native';
 
 const Container = styled.View`
   display: flex;

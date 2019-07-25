@@ -2,26 +2,22 @@ import * as React from 'react';
 
 // Note: test renderer must be required after react-native.
 import styled, { ThemeProvider } from 'styled-components/native';
-import renderer from 'react-test-renderer';
-
-import { createTheme, ThemeType } from '../../../theme';
 import SectionList from '../SectionList';
+import renderer from 'react-test-renderer';
 
 const SampleItemText = styled.Text``;
 const component = (props?: any, sampeSectionTitle?: string) => {
   return (
-    <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
-      <SectionList
-        renderItem={() => (
-          <SampleItemText>Sample Item</SampleItemText>
-        )}
-        sections={[{
-          title: sampeSectionTitle || undefined,
-          data: [],
-        }]}
-        {...props}
-      />
-    </ThemeProvider>
+    <SectionList
+      renderItem={() => (
+        <SampleItemText>Sample Item</SampleItemText>
+      )}
+      sections={[{
+        title: sampeSectionTitle || undefined,
+        data: [],
+      }]}
+      {...props}
+    />
   );
 };
 

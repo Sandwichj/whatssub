@@ -2,21 +2,17 @@ import * as React from 'react';
 import ReactNativeSwitchToggle from 'react-native-switch-toggle';
 
 // Note: test renderer must be required after react-native.
-import { ThemeProvider } from 'styled-components/native';
-import renderer, { act } from 'react-test-renderer';
-
-import { createTheme, ThemeType } from '../../../theme';
 import SwitchToggle from '../SwitchToggle';
+
+import renderer from 'react-test-renderer';
 
 const component = (props?: any) => {
   const handlePress = jest.fn();
   return (
-    <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
-      <SwitchToggle
-        onPress={handlePress}
-        {...props}
-      />
-    </ThemeProvider>
+    <SwitchToggle
+      onPress={handlePress}
+      {...props}
+    />
   );
 };
 
@@ -34,7 +30,7 @@ describe('[SwitchToggle]', () => {
         onPress: handlePress,
       }));
       const switchToggle = rendered.root.findByType(ReactNativeSwitchToggle);
-      act(() => {
+      renderer.act(() => {
         switchToggle.props.onPress();
       });
       expect(handlePress).toHaveBeenCalled();
@@ -50,17 +46,17 @@ describe('[SwitchToggle]', () => {
       }));
       const switchToggle = rendered.root.findByType(ReactNativeSwitchToggle);
 
-      act(() => {
+      renderer.act(() => {
         switchToggle.props.onPress();
       });
       expect(currentSwitchOn).toBeFalsy();
 
-      act(() => {
+      renderer.act(() => {
         switchToggle.props.onPress();
       });
       expect(currentSwitchOn).toBeTruthy();
 
-      act(() => {
+      renderer.act(() => {
         switchToggle.props.onPress();
       });
       expect(currentSwitchOn).toBeFalsy();

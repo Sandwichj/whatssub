@@ -1,7 +1,7 @@
 import React from 'react';
 
-import styled from 'styled-components/native';
 import { TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
 
 const Container = styled.View`
   display: flex;

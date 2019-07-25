@@ -1,23 +1,19 @@
-import { View } from 'react-native';
 import * as React from 'react';
+import { fireEvent, render } from '@testing-library/react-native';
+import SettingOption from '../SettingOption';
+import { View } from 'react-native';
+import renderer from 'react-test-renderer';
 
 // Note: test renderer must be required after react-native.
-import styled, { ThemeProvider } from 'styled-components/native';
-import renderer from 'react-test-renderer';
-import { render, fireEvent } from '@testing-library/react-native';
-
-import { createTheme, ThemeType } from '../../../theme';
-import SettingOption from '../SettingOption';
+import styled from 'styled-components/native';
 
 const sampleLabel = 'Sample label';
 const component = (props?: any) => {
   return (
-    <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
-      <SettingOption
-        label={sampleLabel}
-        {...props}
-      />
-    </ThemeProvider>
+    <SettingOption
+      label={sampleLabel}
+      {...props}
+    />
   );
 };
 
