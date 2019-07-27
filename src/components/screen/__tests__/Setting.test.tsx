@@ -4,7 +4,7 @@ import * as React from 'react';
 import Setting from '../Setting';
 import { ThemeProvider } from 'styled-components/native';
 import { getString } from '../../../../STRINGS';
-import renderer, { act } from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 
 const HEADERTEXT = getString('SETTING');
 const SECTION_HEADER = {
@@ -107,7 +107,7 @@ describe('[Setting]', () => {
     const accountEmail = sectionItem.findByProps({
       testID: accountEmailTestID,
     });
-    act(() => {
+    renderer.act(() => {
       accountEmail.props.onChangeText(sampleChangedEmail);
     });
 
