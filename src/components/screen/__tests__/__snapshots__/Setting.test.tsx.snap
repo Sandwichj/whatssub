@@ -70,7 +70,9 @@ exports[`[Setting] should render without crashing 1`] = `
           "data": Array [
             Object {
               "label": "Email",
-              "option": <ForwardRef>
+              "option": <ForwardRef
+                onChangeText={[Function]}
+              >
                 sampleEmail@doodlelab
               </ForwardRef>,
             },
@@ -134,7 +136,9 @@ exports[`[Setting] should render without crashing 1`] = `
           "data": Array [
             Object {
               "label": "Email",
-              "option": <ForwardRef>
+              "option": <ForwardRef
+                onChangeText={[Function]}
+              >
                 sampleEmail@doodlelab
               </ForwardRef>,
             },
@@ -277,7 +281,10 @@ exports[`[Setting] should render without crashing 1`] = `
           >
             Email
           </Text>
-          <Text
+          <TextInput
+            allowFontScaling={true}
+            onChangeText={[Function]}
+            rejectResponderTermination={true}
             style={
               Array [
                 Object {
@@ -287,9 +294,10 @@ exports[`[Setting] should render without crashing 1`] = `
                 },
               ]
             }
+            underlineColorAndroid="transparent"
           >
             sampleEmail@doodlelab
-          </Text>
+          </TextInput>
         </View>
       </View>
       <View
@@ -451,7 +459,9 @@ exports[`[Setting] should render without crashing 1`] = `
                 "data": Array [
                   Object {
                     "label": "Email",
-                    "option": <ForwardRef>
+                    "option": <ForwardRef
+                      onChangeText={[Function]}
+                    >
                       sampleEmail@doodlelab
                     </ForwardRef>,
                   },
@@ -624,7 +634,9 @@ exports[`[Setting] should render without crashing 1`] = `
                 "data": Array [
                   Object {
                     "label": "Email",
-                    "option": <ForwardRef>
+                    "option": <ForwardRef
+                      onChangeText={[Function]}
+                    >
                       sampleEmail@doodlelab
                     </ForwardRef>,
                   },
