@@ -74,7 +74,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 onChangeText={[Function]}
                 testID="accountEmail"
               >
-                sampleEmail@doodlelab
+                
               </ForwardRef>,
             },
           ],
@@ -85,18 +85,21 @@ exports[`[Setting] should render without crashing 1`] = `
             Object {
               "label": "Pre-billing alarm",
               "option": <StyledSwitchToggle
+                onPress={[Function]}
                 testID="switchToggleNotiBeforePayment"
               />,
             },
             Object {
               "label": "Marketing email notification",
               "option": <StyledSwitchToggle
+                onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingEmail"
               />,
             },
             Object {
               "label": "Marketing push notification",
               "option": <StyledSwitchToggle
+                onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingPush"
               />,
             },
@@ -107,7 +110,7 @@ exports[`[Setting] should render without crashing 1`] = `
           "data": Array [
             Object {
               "label": "Contact us",
-              "onPress": undefined,
+              "onPress": [Function],
             },
           ],
           "title": "Others",
@@ -141,7 +144,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 onChangeText={[Function]}
                 testID="accountEmail"
               >
-                sampleEmail@doodlelab
+                
               </ForwardRef>,
             },
           ],
@@ -152,18 +155,21 @@ exports[`[Setting] should render without crashing 1`] = `
             Object {
               "label": "Pre-billing alarm",
               "option": <StyledSwitchToggle
+                onPress={[Function]}
                 testID="switchToggleNotiBeforePayment"
               />,
             },
             Object {
               "label": "Marketing email notification",
               "option": <StyledSwitchToggle
+                onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingEmail"
               />,
             },
             Object {
               "label": "Marketing push notification",
               "option": <StyledSwitchToggle
+                onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingPush"
               />,
             },
@@ -174,7 +180,7 @@ exports[`[Setting] should render without crashing 1`] = `
           "data": Array [
             Object {
               "label": "Contact us",
-              "onPress": undefined,
+              "onPress": [Function],
             },
           ],
           "title": "Others",
@@ -299,7 +305,7 @@ exports[`[Setting] should render without crashing 1`] = `
             testID="accountEmail"
             underlineColorAndroid="transparent"
           >
-            sampleEmail@doodlelab
+            
           </TextInput>
         </View>
       </View>
@@ -453,6 +459,7 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "label": "Pre-billing alarm",
                 "option": <StyledSwitchToggle
+                  onPress={[Function]}
                   testID="switchToggleNotiBeforePayment"
                 />,
               }
@@ -466,7 +473,7 @@ exports[`[Setting] should render without crashing 1`] = `
                       onChangeText={[Function]}
                       testID="accountEmail"
                     >
-                      sampleEmail@doodlelab
+                      
                     </ForwardRef>,
                   },
                 ],
@@ -479,18 +486,21 @@ exports[`[Setting] should render without crashing 1`] = `
                   Object {
                     "label": "Pre-billing alarm",
                     "option": <StyledSwitchToggle
+                      onPress={[Function]}
                       testID="switchToggleNotiBeforePayment"
                     />,
                   },
                   Object {
                     "label": "Marketing email notification",
                     "option": <StyledSwitchToggle
+                      onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingEmail"
                     />,
                   },
                   Object {
                     "label": "Marketing push notification",
                     "option": <StyledSwitchToggle
+                      onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingPush"
                     />,
                   },
@@ -513,6 +523,7 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "label": "Marketing email notification",
                 "option": <StyledSwitchToggle
+                  onPress={[Function]}
                   testID="switchToggleOnNotiMarkettingEmail"
                 />,
               }
@@ -522,7 +533,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 "data": Array [
                   Object {
                     "label": "Contact us",
-                    "onPress": undefined,
+                    "onPress": [Function],
                   },
                 ],
                 "title": "Others",
@@ -629,6 +640,7 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "label": "Marketing email notification",
                 "option": <StyledSwitchToggle
+                  onPress={[Function]}
                   testID="switchToggleOnNotiMarkettingEmail"
                 />,
               }
@@ -642,7 +654,7 @@ exports[`[Setting] should render without crashing 1`] = `
                       onChangeText={[Function]}
                       testID="accountEmail"
                     >
-                      sampleEmail@doodlelab
+                      
                     </ForwardRef>,
                   },
                 ],
@@ -655,18 +667,21 @@ exports[`[Setting] should render without crashing 1`] = `
                   Object {
                     "label": "Pre-billing alarm",
                     "option": <StyledSwitchToggle
+                      onPress={[Function]}
                       testID="switchToggleNotiBeforePayment"
                     />,
                   },
                   Object {
                     "label": "Marketing email notification",
                     "option": <StyledSwitchToggle
+                      onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingEmail"
                     />,
                   },
                   Object {
                     "label": "Marketing push notification",
                     "option": <StyledSwitchToggle
+                      onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingPush"
                     />,
                   },
@@ -689,6 +704,7 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "label": "Marketing push notification",
                 "option": <StyledSwitchToggle
+                  onPress={[Function]}
                   testID="switchToggleOnNotiMarkettingPush"
                 />,
               }
@@ -698,7 +714,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 "data": Array [
                   Object {
                     "label": "Contact us",
-                    "onPress": undefined,
+                    "onPress": [Function],
                   },
                 ],
                 "title": "Others",
@@ -856,36 +872,53 @@ exports[`[Setting] should render without crashing 1`] = `
         style={null}
       >
         <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "white",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": 50,
-                "justifyContent": "space-between",
-                "paddingBottom": 0,
-                "paddingLeft": 16,
-                "paddingRight": 16,
-                "paddingTop": 0,
-              },
-            ]
+            Object {
+              "opacity": 1,
+            }
           }
+          testID="touchable"
         >
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "color": "rgb(50, 59, 67)",
-                  "fontSize": 16,
-                  "letterSpacing": -0.5,
+                  "alignItems": "center",
+                  "backgroundColor": "white",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "height": 50,
+                  "justifyContent": "space-between",
+                  "paddingBottom": 0,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 0,
                 },
               ]
             }
           >
-            Contact us
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(50, 59, 67)",
+                    "fontSize": 16,
+                    "letterSpacing": -0.5,
+                  },
+                ]
+              }
+            >
+              Contact us
+            </Text>
+          </View>
         </View>
       </View>
       <View

@@ -1,5 +1,5 @@
 import { NavigationScreenProp, NavigationStateRoute } from 'react-navigation';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Constants from 'expo-constants';
 import SectionList from '../shared/SectionList';
 import SettingOption from '../shared/SettingOption';
@@ -38,27 +38,39 @@ const AccountEmail = styled.TextInput`
 interface Props {
   navigation?: NavigationScreenProp<any, any>;
   screenProps?: any,
-  email: string,
-  onSwitchToggleNotiBeforePaymentPress: (switchOn: boolean) => void;
-  onSwitchToggleNotiMarkettingEmailPress: (switchOn: boolean) => void;
-  onSwitchToggleNotiMarkettingPushPress: (switchOn: boolean) => void;
-  onContactUsPress: () => void;
 }
 
 function Page({
   navigation,
   screenProps,
-  email,
-  onSwitchToggleNotiBeforePaymentPress,
-  onSwitchToggleNotiMarkettingEmailPress,
-  onSwitchToggleNotiMarkettingPushPress,
-  onContactUsPress,
 }: Props) {
-  const [currentEmail, setCurrentEmail] = useState<string>(email);
+  const [currentEmail, setCurrentEmail] = useState<string>('');
 
   const handleEmailChange = (email: string) => {
     setCurrentEmail(email);
   };
+
+  const handleSwitchToggleNotiBeforePaymentPress = (switchOn: boolean) => {
+
+  };
+
+  const handleSwitchToggleNotiMarkettingEmailPress = (switchOn: boolean) => {
+
+  };
+
+  const handleSwitchToggleNotiMarkettingPushPress = (switchOn: boolean) => {
+
+  };
+
+  const handleContactUsPress = () => {
+
+  };
+
+  useEffect(() => {
+    const sampleEmail = 'sampleEmail@dooboolab';
+
+    setCurrentEmail(sampleEmail);
+  }, []);
 
   return (
     <Container>
@@ -98,7 +110,7 @@ function Page({
             label: getString('SETTING_NOTIFICATION_BEFORE_PAYMENT'),
             option: (
               <SwitchToggle
-                onPress={onSwitchToggleNotiBeforePaymentPress}
+                onPress={handleSwitchToggleNotiBeforePaymentPress}
                 testID='switchToggleNotiBeforePayment'
               />
             ),
@@ -106,7 +118,7 @@ function Page({
             label: getString('SETTING_NOTIFICATION_MARKETING_EMAIL'),
             option: (
               <SwitchToggle
-                onPress={onSwitchToggleNotiMarkettingEmailPress}
+                onPress={handleSwitchToggleNotiMarkettingEmailPress}
                 testID='switchToggleOnNotiMarkettingEmail'
               />
             ),
@@ -114,7 +126,7 @@ function Page({
             label: getString('SETTING_NOTIFICATION_MARKETING_PUSH'),
             option: (
               <SwitchToggle
-                onPress={onSwitchToggleNotiMarkettingPushPress}
+                onPress={handleSwitchToggleNotiMarkettingPushPress}
                 testID='switchToggleOnNotiMarkettingPush'
               />
             ),
@@ -123,7 +135,7 @@ function Page({
           title: `${getString('SETTING_OTHERS')}`,
           data: [{
             label: getString('SETTING_OTHERS_CONTACTUS'),
-            onPress: onContactUsPress,
+            onPress: handleContactUsPress,
           }],
         }]}
       />

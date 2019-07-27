@@ -3,6 +3,8 @@ import * as React from 'react';
 // Note: test renderer must be required after react-native.
 import Setting from '../Setting';
 import { ThemeProvider } from 'styled-components/native';
+import { ThemeType } from '../../../types';
+import { createTheme } from '../../../theme';
 import { getString } from '../../../../STRINGS';
 import renderer from 'react-test-renderer';
 
@@ -20,7 +22,6 @@ const SECTION_LABEL = {
   NOTIFICATION_MARKETING_PUSH: getString('SETTING_NOTIFICATION_MARKETING_PUSH'),
   OTHERS_CONTACTUS: getString('SETTING_OTHERS_CONTACTUS'),
 };
-const sampleEmail = 'sampleEmail@doodlelab';
 const accountEmailTestID = 'accountEmail';
 const switchToggleNotiBeforePaymentTestID = 'switchToggleNotiBeforePayment';
 const switchToggleOnNotiMarkettingEmailTestID =
@@ -29,13 +30,17 @@ const switchToggleOnNotiMarkettingPushTestID =
  'switchToggleOnNotiMarkettingPush';
 const component = (props?: any) => {
   return (
-    <Setting
-      navigation={{
-        navigate: jest.fn(),
-      }}
-      email={sampleEmail}
-      {...props}
-    />
+    <ThemeProvider theme={createTheme(ThemeType.LIGHT)}>
+      <Setting
+        navigation={{
+          navigate: jest.fn(),
+        }}
+        screenProps={{
+          theme: createTheme(ThemeType.LIGHT),
+        }}
+        {...props}
+      />
+    </ThemeProvider>
   );
 };
 
@@ -94,7 +99,7 @@ describe('[Setting]', () => {
       label: SECTION_LABEL.EMAIL,
     });
     expect(sectionItem.findByProps({
-      children: sampleEmail,
+      children: '',
     })).toBeTruthy();
   });
 
@@ -186,53 +191,5 @@ describe('[Setting]', () => {
       label: SECTION_LABEL.OTHERS_CONTACTUS,
     });
     expect(sectionItem).toBeTruthy();
-  });
-
-  describe('[Setting] Interaction', () => {
-    const handleSwitchToggleNotiBeforePaymentPress = jest.fn();
-    const handleSwitchToggleNotiMarkettingEmailPress = jest.fn();
-    const handleSwitchToggleNotiMarkettingPushPress = jest.fn();
-    const handleContactUsPress = jest.fn();
-    const rendered = renderer.create(component({
-      onSwitchToggleNotiBeforePaymentPress:
-        handleSwitchToggleNotiBeforePaymentPress,
-      onSwitchToggleNotiMarkettingEmailPress:
-        handleSwitchToggleNotiMarkettingEmailPress,
-      onSwitchToggleNotiMarkettingPushPress:
-        handleSwitchToggleNotiMarkettingPushPress,
-      onContactUsPress: handleContactUsPress,
-    }));
-
-    it('should simulate onSwitchToggleNotiBeforePaymentPress', () => {
-      const switchToggle = rendered.root.findByProps({
-        testID: switchToggleNotiBeforePaymentTestID,
-      });
-      switchToggle.props.onPress();
-      expect(handleSwitchToggleNotiBeforePaymentPress).toHaveBeenCalled();
-    });
-
-    it('should simulate onSwitchToggleNotiMarkettingEmailPress', () => {
-      const switchToggle = rendered.root.findByProps({
-        testID: switchToggleOnNotiMarkettingEmailTestID,
-      });
-      switchToggle.props.onPress();
-      expect(handleSwitchToggleNotiMarkettingEmailPress).toHaveBeenCalled();
-    });
-
-    it('should simulate onSwitchToggleNotiMarkettingPushPress', () => {
-      const switchToggle = rendered.root.findByProps({
-        testID: switchToggleOnNotiMarkettingPushTestID,
-      });
-      switchToggle.props.onPress();
-      expect(handleSwitchToggleNotiMarkettingPushPress).toHaveBeenCalled();
-    });
-
-    it('should simulate onContactUsPress', () => {
-      const sectionItem = rendered.root.findByProps({
-        label: SECTION_LABEL.OTHERS_CONTACTUS,
-      });
-      sectionItem.props.onPress();
-      expect(handleContactUsPress).toHaveBeenCalled();
-    });
   });
 });
