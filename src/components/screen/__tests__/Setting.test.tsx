@@ -4,7 +4,7 @@ import * as React from 'react';
 import Setting from '../Setting';
 import { ThemeProvider } from 'styled-components/native';
 import { getString } from '../../../../STRINGS';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 
 const HEADERTEXT = getString('SETTING');
 const SECTION_HEADER = {
@@ -21,6 +21,7 @@ const SECTION_LABEL = {
   OTHERS_CONTACTUS: getString('SETTING_OTHERS_CONTACTUS'),
 };
 const sampleEmail = 'sampleEmail@doodlelab';
+const accountEmailTestID = 'accountEmail';
 const switchToggleNotiBeforePaymentTestID = 'switchToggleNotiBeforePayment';
 const switchToggleOnNotiMarkettingEmailTestID =
  'switchToggleOnNotiMarkettingEmail';
@@ -87,12 +88,32 @@ describe('[Setting]', () => {
     expect(sectionItem).toBeTruthy();
   });
 
-  it(`should render sectionItem "${SECTION_LABEL.EMAIL}" with email`, () => {
+  it(`should render sectionItem "${SECTION_LABEL.EMAIL}" with default email`, () => {
     const rendered = renderer.create(component());
     const sectionItem = rendered.root.findByProps({
       label: SECTION_LABEL.EMAIL,
     });
-    expect(sectionItem).toBeTruthy();
+    expect(sectionItem.findByProps({
+      children: sampleEmail,
+    })).toBeTruthy();
+  });
+
+  it(`should render sectionItem "${SECTION_LABEL.EMAIL}" value to changed email.`, () => {
+    const sampleChangedEmail = 'sampleChangedEmail';
+    const rendered = renderer.create(component());
+    const sectionItem = rendered.root.findByProps({
+      label: SECTION_LABEL.EMAIL,
+    });
+    const accountEmail = sectionItem.findByProps({
+      testID: accountEmailTestID,
+    });
+    act(() => {
+      accountEmail.props.onChangeText(sampleChangedEmail);
+    });
+
+    expect(sectionItem.findByProps({
+      children: sampleChangedEmail,
+    })).toBeTruthy();
   });
 
   it(`should render sectionItem

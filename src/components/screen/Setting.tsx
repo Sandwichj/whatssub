@@ -84,7 +84,12 @@ function Page({
           data: [{
             label: getString('SETTING_EMAIL'),
             option: (
-              <AccountEmail onChangeText={handleEmailChange}>{currentEmail}</AccountEmail>
+              <AccountEmail
+                testID='accountEmail'
+                onChangeText={handleEmailChange}
+              >
+                {currentEmail}
+              </AccountEmail>
             ),
           }],
         }, {

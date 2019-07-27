@@ -72,6 +72,7 @@ exports[`[Setting] should render without crashing 1`] = `
               "label": "Email",
               "option": <ForwardRef
                 onChangeText={[Function]}
+                testID="accountEmail"
               >
                 sampleEmail@doodlelab
               </ForwardRef>,
@@ -138,6 +139,7 @@ exports[`[Setting] should render without crashing 1`] = `
               "label": "Email",
               "option": <ForwardRef
                 onChangeText={[Function]}
+                testID="accountEmail"
               >
                 sampleEmail@doodlelab
               </ForwardRef>,
@@ -294,6 +296,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 },
               ]
             }
+            testID="accountEmail"
             underlineColorAndroid="transparent"
           >
             sampleEmail@doodlelab
@@ -461,6 +464,7 @@ exports[`[Setting] should render without crashing 1`] = `
                     "label": "Email",
                     "option": <ForwardRef
                       onChangeText={[Function]}
+                      testID="accountEmail"
                     >
                       sampleEmail@doodlelab
                     </ForwardRef>,
@@ -636,6 +640,7 @@ exports[`[Setting] should render without crashing 1`] = `
                     "label": "Email",
                     "option": <ForwardRef
                       onChangeText={[Function]}
+                      testID="accountEmail"
                     >
                       sampleEmail@doodlelab
                     </ForwardRef>,
