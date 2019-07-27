@@ -29,7 +29,7 @@ const HeaderText = styled.Text`
   letter-spacing: -0.47;
 `;
 
-const AccountEmail = styled.Text`
+const AccountEmail = styled.TextInput`
   font-size: 16;
   color: rgb(153, 162, 170);
   letter-spacing: -0.5;
@@ -54,6 +54,12 @@ function Page({
   onSwitchToggleNotiMarkettingPushPress,
   onContactUsPress,
 }: Props) {
+  const [currentEmail, setCurrentEmail] = useState<string>(email);
+
+  const handleEmailChange = (email: string) => {
+    setCurrentEmail(email);
+  };
+
   return (
     <Container>
       <Header>
@@ -78,7 +84,7 @@ function Page({
           data: [{
             label: getString('SETTING_EMAIL'),
             option: (
-              <AccountEmail>{email}</AccountEmail>
+              <AccountEmail onChangeText={handleEmailChange}>{currentEmail}</AccountEmail>
             ),
           }],
         }, {
