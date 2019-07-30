@@ -29,7 +29,7 @@
   "dependencies": {
     "expo": "^33.0.7",
     "expo-app-auth": "^5.0.1",
-    "expo-constants": "~5.0.1",
+    "expo-constants": "^6.0.0",
     "expo-facebook": "~5.0.1",
     "expo-font": "~5.0.1",
     "expo-google-sign-in": "~5.0.1",

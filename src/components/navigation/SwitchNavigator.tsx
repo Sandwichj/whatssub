@@ -11,6 +11,7 @@ import AuthStackNavigator from './AuthStackNavigator';
 import ExamplePieChartMonth from '../screen/ExamplePieChartMonth';
 import MainEmpty from '../screen/MainEmpty';
 import MainStackNavigator from './MainStackNavigator';
+import Setting from '../screen/Setting';
 import { createTheme } from '../../theme';
 
 const SwitchNavigator: NavigationContainer = createSwitchNavigator(
@@ -20,6 +21,7 @@ const SwitchNavigator: NavigationContainer = createSwitchNavigator(
     MainStackNavigator,
     ExamplePieChartMonth,
     MainEmpty,
+    Setting,
   },
   {
     initialRouteName: 'AuthLoadingScreen',
