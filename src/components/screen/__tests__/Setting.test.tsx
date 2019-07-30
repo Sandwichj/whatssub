@@ -51,12 +51,6 @@ describe('[Setting]', () => {
     expect(rendered).toBeTruthy();
   });
 
-  it(`should render [Text] with value "${HEADERTEXT}"`, () => {
-    const rendered = renderer.create(component());
-    const text = rendered.root.findByProps({ children: HEADERTEXT });
-    expect(text).toBeTruthy();
-  });
-
   it(`should render section header
    with value "${SECTION_HEADER.ACCOUNT}"`, () => {
     const rendered = renderer.create(component());

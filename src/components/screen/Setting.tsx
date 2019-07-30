@@ -7,26 +7,13 @@ import SwitchToggle from '../shared/SwitchToggle';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components/native';
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   display: flex;
   flex: 1;
   justify-content: center;
-  background-color: white;
+  background-color: ${({ theme }) => theme.background};
 
   padding-top: ${Constants.statusBarHeight};
-`;
-
-const Header = styled.View`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 44px;
-`;
-
-const HeaderText = styled.Text`
-  font-size: 16;
-  color: rgb(50, 59, 67);
-  letter-spacing: -0.47;
 `;
 
 const AccountEmail = styled.TextInput`
@@ -74,9 +61,6 @@ function Page({
 
   return (
     <Container>
-      <Header>
-        <HeaderText>{getString('SETTING')}</HeaderText>
-      </Header>
       <SectionList
         renderItem={({ item, index }) => {
           const { label, option, onPress } = item;

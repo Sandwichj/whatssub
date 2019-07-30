@@ -8,19 +8,27 @@ import {
 import Main from '../screen/Main';
 import React from 'react';
 import { ScreenProps } from '../../types';
+import Setting from '../screen/Setting';
 
 const routeConfig: NavigationRouteConfigMap = {
-  Intro: {
+  Main: {
     screen: Main,
     navigationOptions: {
       title: 'Main',
     },
-    path: 'intro',
+    path: 'main',
+  },
+  Setting: {
+    screen: Setting,
+    navigationOptions: {
+      title: 'Setting',
+    },
+    path: 'setting',
   },
 };
 
 const navigatorConfig: StackNavigatorConfig = {
-  initialRouteName: 'Intro',
+  initialRouteName: 'Setting',
   // header: null,
   // headerMode: 'none',
   navigationOptions: ({ navigation, screenProps }

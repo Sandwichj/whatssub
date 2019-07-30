@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[Setting] should render without crashing 1`] = `
-<View
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "#f9fafb",
         "display": "flex",
         "flexBasis": 0,
         "flexGrow": 1,
@@ -16,32 +17,6 @@ exports[`[Setting] should render without crashing 1`] = `
     ]
   }
 >
-  <View
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "height": 44,
-          "justifyContent": "center",
-        },
-      ]
-    }
-  >
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "rgb(50, 59, 67)",
-            "fontSize": 16,
-            "letterSpacing": -0.47,
-          },
-        ]
-      }
-    >
-      Setting
-    </Text>
-  </View>
   <RCTScrollView
     ListFooterComponent={
       Object {
@@ -946,5 +921,5 @@ exports[`[Setting] should render without crashing 1`] = `
       </View>
     </View>
   </RCTScrollView>
-</View>
+</RCTSafeAreaView>
 `;
