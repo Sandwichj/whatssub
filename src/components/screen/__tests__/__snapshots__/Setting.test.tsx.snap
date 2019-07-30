@@ -39,7 +39,7 @@ exports[`[Setting] should render without crashing 1`] = `
         ]
       }
     >
-      [missing "mock.SETTING" translation]
+      Setting
     </Text>
   </View>
   <RCTScrollView
@@ -69,7 +69,7 @@ exports[`[Setting] should render without crashing 1`] = `
         Object {
           "data": Array [
             Object {
-              "label": "[missing \\"mock.SETTING_EMAIL\\" translation]",
+              "label": "Email",
               "option": <ForwardRef
                 onChangeText={[Function]}
                 testID="accountEmail"
@@ -78,42 +78,42 @@ exports[`[Setting] should render without crashing 1`] = `
               </ForwardRef>,
             },
           ],
-          "title": "[missing \\"mock.SETTING_ACCOUNT\\" translation]",
+          "title": "Account",
         },
         Object {
           "data": Array [
             Object {
-              "label": "[missing \\"mock.SETTING_NOTIFICATION_BEFORE_PAYMENT\\" translation]",
+              "label": "Pre-billing alarm",
               "option": <StyledSwitchToggle
                 onPress={[Function]}
                 testID="switchToggleNotiBeforePayment"
               />,
             },
             Object {
-              "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_EMAIL\\" translation]",
+              "label": "Marketing email notification",
               "option": <StyledSwitchToggle
                 onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingEmail"
               />,
             },
             Object {
-              "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_PUSH\\" translation]",
+              "label": "Marketing push notification",
               "option": <StyledSwitchToggle
                 onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingPush"
               />,
             },
           ],
-          "title": "[missing \\"mock.SETTING_NOTIFICATION\\" translation]",
+          "title": "Notification",
         },
         Object {
           "data": Array [
             Object {
-              "label": "[missing \\"mock.SETTING_OTHERS_CONTACTUS\\" translation]",
+              "label": "Contact us",
               "onPress": [Function],
             },
           ],
-          "title": "[missing \\"mock.SETTING_OTHERS\\" translation]",
+          "title": "Others",
         },
       ]
     }
@@ -139,7 +139,7 @@ exports[`[Setting] should render without crashing 1`] = `
         Object {
           "data": Array [
             Object {
-              "label": "[missing \\"mock.SETTING_EMAIL\\" translation]",
+              "label": "Email",
               "option": <ForwardRef
                 onChangeText={[Function]}
                 testID="accountEmail"
@@ -148,42 +148,42 @@ exports[`[Setting] should render without crashing 1`] = `
               </ForwardRef>,
             },
           ],
-          "title": "[missing \\"mock.SETTING_ACCOUNT\\" translation]",
+          "title": "Account",
         },
         Object {
           "data": Array [
             Object {
-              "label": "[missing \\"mock.SETTING_NOTIFICATION_BEFORE_PAYMENT\\" translation]",
+              "label": "Pre-billing alarm",
               "option": <StyledSwitchToggle
                 onPress={[Function]}
                 testID="switchToggleNotiBeforePayment"
               />,
             },
             Object {
-              "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_EMAIL\\" translation]",
+              "label": "Marketing email notification",
               "option": <StyledSwitchToggle
                 onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingEmail"
               />,
             },
             Object {
-              "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_PUSH\\" translation]",
+              "label": "Marketing push notification",
               "option": <StyledSwitchToggle
                 onPress={[Function]}
                 testID="switchToggleOnNotiMarkettingPush"
               />,
             },
           ],
-          "title": "[missing \\"mock.SETTING_NOTIFICATION\\" translation]",
+          "title": "Notification",
         },
         Object {
           "data": Array [
             Object {
-              "label": "[missing \\"mock.SETTING_OTHERS_CONTACTUS\\" translation]",
+              "label": "Contact us",
               "onPress": [Function],
             },
           ],
-          "title": "[missing \\"mock.SETTING_OTHERS\\" translation]",
+          "title": "Others",
         },
       ]
     }
@@ -250,7 +250,7 @@ exports[`[Setting] should render without crashing 1`] = `
               ]
             }
           >
-            [missing "mock.SETTING_ACCOUNT" translation]
+            Account
           </Text>
         </View>
       </View>
@@ -287,7 +287,7 @@ exports[`[Setting] should render without crashing 1`] = `
               ]
             }
           >
-            [missing "mock.SETTING_EMAIL" translation]
+            Email
           </Text>
           <TextInput
             allowFontScaling={true}
@@ -357,7 +357,7 @@ exports[`[Setting] should render without crashing 1`] = `
               ]
             }
           >
-            [missing "mock.SETTING_NOTIFICATION" translation]
+            Notification
           </Text>
         </View>
       </View>
@@ -395,7 +395,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 ]
               }
             >
-              [missing "mock.SETTING_NOTIFICATION_BEFORE_PAYMENT" translation]
+              Pre-billing alarm
             </Text>
             <View
               accessible={true}
@@ -457,7 +457,7 @@ exports[`[Setting] should render without crashing 1`] = `
             highlighted={false}
             leadingItem={
               Object {
-                "label": "[missing \\"mock.SETTING_NOTIFICATION_BEFORE_PAYMENT\\" translation]",
+                "label": "Pre-billing alarm",
                 "option": <StyledSwitchToggle
                   onPress={[Function]}
                   testID="switchToggleNotiBeforePayment"
@@ -468,7 +468,7 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "data": Array [
                   Object {
-                    "label": "[missing \\"mock.SETTING_EMAIL\\" translation]",
+                    "label": "Email",
                     "option": <ForwardRef
                       onChangeText={[Function]}
                       testID="accountEmail"
@@ -477,35 +477,35 @@ exports[`[Setting] should render without crashing 1`] = `
                     </ForwardRef>,
                   },
                 ],
-                "title": "[missing \\"mock.SETTING_ACCOUNT\\" translation]",
+                "title": "Account",
               }
             }
             section={
               Object {
                 "data": Array [
                   Object {
-                    "label": "[missing \\"mock.SETTING_NOTIFICATION_BEFORE_PAYMENT\\" translation]",
+                    "label": "Pre-billing alarm",
                     "option": <StyledSwitchToggle
                       onPress={[Function]}
                       testID="switchToggleNotiBeforePayment"
                     />,
                   },
                   Object {
-                    "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_EMAIL\\" translation]",
+                    "label": "Marketing email notification",
                     "option": <StyledSwitchToggle
                       onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingEmail"
                     />,
                   },
                   Object {
-                    "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_PUSH\\" translation]",
+                    "label": "Marketing push notification",
                     "option": <StyledSwitchToggle
                       onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingPush"
                     />,
                   },
                 ],
-                "title": "[missing \\"mock.SETTING_NOTIFICATION\\" translation]",
+                "title": "Notification",
               }
             }
             style={
@@ -521,7 +521,7 @@ exports[`[Setting] should render without crashing 1`] = `
             }
             trailingItem={
               Object {
-                "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_EMAIL\\" translation]",
+                "label": "Marketing email notification",
                 "option": <StyledSwitchToggle
                   onPress={[Function]}
                   testID="switchToggleOnNotiMarkettingEmail"
@@ -532,11 +532,11 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "data": Array [
                   Object {
-                    "label": "[missing \\"mock.SETTING_OTHERS_CONTACTUS\\" translation]",
+                    "label": "Contact us",
                     "onPress": [Function],
                   },
                 ],
-                "title": "[missing \\"mock.SETTING_OTHERS\\" translation]",
+                "title": "Others",
               }
             }
           />
@@ -576,7 +576,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 ]
               }
             >
-              [missing "mock.SETTING_NOTIFICATION_MARKETING_EMAIL" translation]
+              Marketing email notification
             </Text>
             <View
               accessible={true}
@@ -638,7 +638,7 @@ exports[`[Setting] should render without crashing 1`] = `
             highlighted={false}
             leadingItem={
               Object {
-                "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_EMAIL\\" translation]",
+                "label": "Marketing email notification",
                 "option": <StyledSwitchToggle
                   onPress={[Function]}
                   testID="switchToggleOnNotiMarkettingEmail"
@@ -649,7 +649,7 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "data": Array [
                   Object {
-                    "label": "[missing \\"mock.SETTING_EMAIL\\" translation]",
+                    "label": "Email",
                     "option": <ForwardRef
                       onChangeText={[Function]}
                       testID="accountEmail"
@@ -658,35 +658,35 @@ exports[`[Setting] should render without crashing 1`] = `
                     </ForwardRef>,
                   },
                 ],
-                "title": "[missing \\"mock.SETTING_ACCOUNT\\" translation]",
+                "title": "Account",
               }
             }
             section={
               Object {
                 "data": Array [
                   Object {
-                    "label": "[missing \\"mock.SETTING_NOTIFICATION_BEFORE_PAYMENT\\" translation]",
+                    "label": "Pre-billing alarm",
                     "option": <StyledSwitchToggle
                       onPress={[Function]}
                       testID="switchToggleNotiBeforePayment"
                     />,
                   },
                   Object {
-                    "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_EMAIL\\" translation]",
+                    "label": "Marketing email notification",
                     "option": <StyledSwitchToggle
                       onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingEmail"
                     />,
                   },
                   Object {
-                    "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_PUSH\\" translation]",
+                    "label": "Marketing push notification",
                     "option": <StyledSwitchToggle
                       onPress={[Function]}
                       testID="switchToggleOnNotiMarkettingPush"
                     />,
                   },
                 ],
-                "title": "[missing \\"mock.SETTING_NOTIFICATION\\" translation]",
+                "title": "Notification",
               }
             }
             style={
@@ -702,7 +702,7 @@ exports[`[Setting] should render without crashing 1`] = `
             }
             trailingItem={
               Object {
-                "label": "[missing \\"mock.SETTING_NOTIFICATION_MARKETING_PUSH\\" translation]",
+                "label": "Marketing push notification",
                 "option": <StyledSwitchToggle
                   onPress={[Function]}
                   testID="switchToggleOnNotiMarkettingPush"
@@ -713,11 +713,11 @@ exports[`[Setting] should render without crashing 1`] = `
               Object {
                 "data": Array [
                   Object {
-                    "label": "[missing \\"mock.SETTING_OTHERS_CONTACTUS\\" translation]",
+                    "label": "Contact us",
                     "onPress": [Function],
                   },
                 ],
-                "title": "[missing \\"mock.SETTING_OTHERS\\" translation]",
+                "title": "Others",
               }
             }
           />
@@ -756,7 +756,7 @@ exports[`[Setting] should render without crashing 1`] = `
               ]
             }
           >
-            [missing "mock.SETTING_NOTIFICATION_MARKETING_PUSH" translation]
+            Marketing push notification
           </Text>
           <View
             accessible={true}
@@ -863,7 +863,7 @@ exports[`[Setting] should render without crashing 1`] = `
               ]
             }
           >
-            [missing "mock.SETTING_OTHERS" translation]
+            Others
           </Text>
         </View>
       </View>
@@ -916,7 +916,7 @@ exports[`[Setting] should render without crashing 1`] = `
                 ]
               }
             >
-              [missing "mock.SETTING_OTHERS_CONTACTUS" translation]
+              Contact us
             </Text>
           </View>
         </View>
